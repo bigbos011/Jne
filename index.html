@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNE Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            max-width: 420px;
+            margin: 0 auto;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        .jne-blue { color: #0055AA; }
+        .jne-red { color: #E30613; }
+        .text-white-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        a { 
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .clickable {
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="bg-white px-5 py-4 flex justify-between items-center shadow-sm relative z-20">
+    <a href="#" class="flex items-center gap-0">
+        <span class="text-3xl font-bold text-[#0055AA]">JNE</span>
+        <span class="text-xl font-bold text-[#E30613]">EXPRESS</span>
+    </a>
+    <button class="text-2xl text-gray-800">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<!-- ============== HERO SECTION ============== -->
+<section class="relative">
+    <!-- Gambar Latar -->
+    <div class="w-full h-[520px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=420&h=520&fit=crop" 
+             alt="JNE Background" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+
+    <!-- Tombol Jelajahi Lebih Jauh -->
+    <div class="absolute top-[240px] left-1/2 -translate-x-1/2 z-10">
+        <a href="halaman-jelajahi.html" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-medium backdrop-blur-sm bg-white/10 hover:bg-white/20 transition inline-block">
+            Jelajahi Lebih Jauh
+        </a>
+    </div>
+
+    <!-- Kotak Lacak & Cek Tarif -->
+    <div class="absolute bottom-6 left-4 right-4 bg-white/95 backdrop-blur-md rounded-3xl shadow-lg p-5 z-10">
+        <!-- Lacak Paket Bermasalah -->
+        <a href="bantuan.html" class="flex items-center justify-between mb-4 block clickable">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-location-dot text-[#E30613] text-xl"></i>
+                <div>
+                    <p class="font-bold text-gray-800">Lacak Paket Bermasalah</p>
+                    <p class="text-gray-500 text-sm">Bantuan Pengiriman</p>
+                </div>
+            </div>
+            <span class="text-gray-500 text-lg">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </a>
+
+        <hr class="border-gray-200 mb-4">
+
+        <!-- Metode Pembayaran -->
+        <a href="bantuan.html" class="flex items-center justify-between block clickable">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-invoice-dollar text-[#0055AA] text-xl"></i>
+                <div>
+                    <p class="font-bold text-gray-800">Metode Pembayaran</p>
+                    <p class="text-gray-500 text-sm">Masukan data Pembayaran</p>
+                </div>
+            </div>
+            <span class="text-gray-500 text-lg">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </a>
+    </div>
+</section>
+
+<!-- ============== CHAT JONI & ADMIN ============== -->
+<div class="fixed bottom-6 right-5 flex flex-col items-center gap-3 z-50">
+    <a href="https://wa.me/6281234567890" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2 hover:bg-green-700 transition">
+        <i class="fa-solid fa-headset"></i> Hubungi Admin
+    </a>
+    <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg flex items-center gap-2">
+        <i class="fa-solid fa-comment-dots"></i> Chat JONI
+    </button>
+</div>
+
+</body>
+</html>

